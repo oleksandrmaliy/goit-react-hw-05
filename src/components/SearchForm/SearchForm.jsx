@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import styles from './SearchForm.module.css';
 
@@ -15,9 +15,6 @@ const SearchForm = () => {
     setSearchParams({ query });
     setQuery('');
   };
-
-  //   console.log('query: ', query);
-  //   console.log(searchParams);
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>

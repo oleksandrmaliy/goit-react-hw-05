@@ -1,38 +1,28 @@
 .home {
   background-color: #90cea1;
-  height: calc(100vh - 123px);
+  height: calc(100vh - 103px);
   margin: 0px;
   padding: 10px 0px;
-  /* background-image: url(`https://image.tmdb.org/t/p/w500${image}`); */
-  /* background-size: 'cover'; */
 }
 
 .list {
   display: inline-block;
   list-style: none;
-  /* text-decoration-style: none; */
-  /* text-decoration: none; */
-  /* list-style: none; */
-
-  /* filter: blur(100px); */
-  /* color: blue; */
 }
 
 .li {
-  /* padding: 0px; */
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .linkage {
   padding: 0 10px;
   background-color: RGB(255, 255, 255, 0.5);
-  /* filter: blur(5px); */
+
   text-decoration: none;
 
   color: #0d253f;
 }
 
 .linkage:global(:hover) {
-  /* color: #01b4e4; */
   font-weight: bold;
 }
