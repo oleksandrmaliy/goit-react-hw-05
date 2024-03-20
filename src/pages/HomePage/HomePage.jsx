@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import styles from './HomePage.module.css';
 
 import getAllMovies from '../../components/API/GetTrendingMovies';
+import MovieList from '../../components/MovieList/MovieList';
 
 const nr = Math.round(Math.random() * 20);
 
@@ -29,21 +30,8 @@ const HomePage = () => {
         setLoading(false);
       }
     };
-
     allMovies();
   }, []);
-
-  const dailyTrend = allMovies.map(({ id, title, name }) => (
-    <li className={styles.li} key={id}>
-      <Link
-        className={styles.linkage}
-        to={`/movies/${id}`}
-        state={{ from: location }}
-      >
-        {title || name}
-      </Link>
-    </li>
-  ));
 
   return (
     <div
@@ -60,7 +48,9 @@ const HomePage = () => {
       {loading && <p>...Loading</p>}
       {error && <h3>{error}</h3>}
       {Boolean(!loading && !error) && (
-        <ul className={styles.list}>{dailyTrend}</ul>
+        <ul className={styles.list}>
+          <MovieList moviesArray={allMovies} location={location} />
+        </ul>
       )}
     </div>
   );

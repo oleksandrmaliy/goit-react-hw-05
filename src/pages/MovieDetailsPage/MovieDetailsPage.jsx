@@ -3,7 +3,7 @@ import {
   Link,
   Outlet,
   useParams,
-  useNavigate,
+  // useNavigate,
   useLocation,
 } from 'react-router-dom';
 import getSingleMovie from '../../components/API/GetSingleMovie';
@@ -19,8 +19,8 @@ const MovieDetailsPage = () => {
 
   const { id } = useParams();
   const location = useLocation();
-  const pageBack = useRef(location.state?.from ?? '/');
-  const navigate = useNavigate();
+  const ref = useRef(location.state?.from ?? '/');
+  // const navigate = useNavigate();
   const defaultImg = `https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg`;
 
   useEffect(() => {
@@ -66,13 +66,16 @@ const MovieDetailsPage = () => {
 
   return (
     <div className={styles.detailsPage}>
-      <button
-        className={styles.backButton}
-        onClick={() => navigate(pageBack.current)}
-        type="button"
-      >
+      <Link className={styles.backButton} to={ref.current}>
+        {/* onClick={() => navigate(pageRef.current)} */}
+        {/* type="button" */}
+
         {`<~ Go Back (To Future) :-)`}
-      </button>
+      </Link>
+      {/* // </button> */}
+      {/* // <Link className='btn-back' to={ref.current}>
+			// 	Go back
+			// </Link> */}
       {loading && <p>...Loading</p>}
       {error && <h3>{error}</h3>}
       <div className={styles.block}>
