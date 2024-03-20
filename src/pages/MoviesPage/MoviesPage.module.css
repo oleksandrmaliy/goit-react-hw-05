@@ -1,0 +1,17 @@
+.movies {
+  margin: 0px;
+  padding-top: 20px;
+  height: calc(100vh - 123px);
+  background-color: #90cea1;
+}
+
+.movieList {
+  list-style-type: none;
+}
+.movieLink {
+  text-decoration: none;
+  color: #0d253f;
+}
+.movieLink:global(:hover) {
+  font-weight: bold;
+}

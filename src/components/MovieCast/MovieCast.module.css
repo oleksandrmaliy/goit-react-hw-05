@@ -1,0 +1,27 @@
+.castList {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding-top: 20px;
+}
+.castItem {
+  width: 200px;
+  padding-top: 20px;
+  background-color: #01b4e4;
+  border-radius: 10px;
+  text-align: center;
+}
+.castImg {
+  width: 150px;
+  height: auto;
+}
+.castName {
+  font-weight: bold;
+}
+.castCharacter {
+  font-style: italic;
+}
+.noInfo {
+  margin-left: 30px;
+}

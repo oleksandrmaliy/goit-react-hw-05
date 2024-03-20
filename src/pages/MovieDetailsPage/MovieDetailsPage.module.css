@@ -1,0 +1,53 @@
+.detailsPage {
+  position: relative;
+  min-height: calc(100vh - 133px);
+  max-height: auto;
+  background-color: #90cea1;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  /* padding-right: 20px; */
+}
+.backButton {
+  margin-left: 30px;
+  cursor: pointer;
+  padding: 5px 10px;
+  /* border: transparent; */
+  border-radius: 5px;
+  color: #0d253f;
+  background-color: #01b4e4;
+}
+.block {
+  display: flex;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #0d253f;
+}
+.poster {
+  /* display: inline-block; */
+  width: 250px;
+  height: auto;
+  margin-left: 30px;
+  margin-top: 15px;
+}
+.info {
+  /* display: block; */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.title {
+  color: #0d253f;
+  /* font-weight: bolder; */
+}
+.addInfo {
+  margin-left: 30px;
+}
+.addInfList {
+  list-style-type: none;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #0d253f;
+}
+.upBtn {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background-color: #01b4e4;
+}

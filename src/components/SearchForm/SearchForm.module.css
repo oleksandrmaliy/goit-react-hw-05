@@ -1,0 +1,10 @@
+.form {
+  margin-left: 30px;
+}
+.searchFormButton {
+  margin-left: 6px;
+  border: 1px black solid;
+}
+.searchFormButtonLabel {
+  font-weight: bold;
+}
