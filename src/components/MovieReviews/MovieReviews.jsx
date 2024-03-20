@@ -27,7 +27,6 @@ const MovieReviewsInfo = () => {
       movieReviews();
     }
   }, [id]);
-  console.log('reviews: ', reviews);
 
   const reviewsData = reviews.map(({ id, author, content }) => (
     <li key={id}>
@@ -42,7 +41,7 @@ const MovieReviewsInfo = () => {
       {error && <h3>{error}</h3>}
       {Boolean(!reviews.length && !loading) && (
         <p className={styles.noInfo}>
-          We don't have any reviews for this movie.
+          We don not have any reviews for this movie.
         </p>
       )}
       {Boolean(reviews.length && !loading) && <ul>{reviewsData}</ul>}
