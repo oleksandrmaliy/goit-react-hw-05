@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import styles from './MainMenu.module.css';
+import styles from './Navigation.module.css';
 
-const mainMenu = () => {
+const Navigation = () => {
   return (
     <>
       <ul className={styles.menu}>
@@ -32,4 +32,4 @@ const mainMenu = () => {
   );
 };
 
-export default mainMenu;
+export default Navigation;

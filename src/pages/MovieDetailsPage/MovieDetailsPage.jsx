@@ -89,18 +89,18 @@ const MovieDetailsPage = () => {
           <h2 className={styles.title}>
             {title} ({year})
           </h2>
-          <p>
+          <span>
             <span>User Score: </span>
             {vote_average ? (
               `${Math.round(vote_average * 10)}%`
             ) : (
-              <span> No info</span>
+              <span>No info</span>
             )}
-          </p>
+          </span>
           <h3>Overview</h3>
-          <p>{overview ? overview : <p>No info</p>}</p>
+          <div>{overview ? overview : <p>No info</p>}</div>
           <h4>Genres</h4>
-          <p>{genres ? genres : <p>No info</p>}</p>
+          <div>{genres ? genres : <p>No info</p>}</div>
         </div>
       </div>
       <div>
