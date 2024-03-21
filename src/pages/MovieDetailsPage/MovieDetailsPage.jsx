@@ -1,17 +1,11 @@
 import { useState, useEffect, useRef, Suspense } from 'react';
-import {
-  Link,
-  Outlet,
-  useParams,
-  // useNavigate,
-  useLocation,
-} from 'react-router-dom';
+import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import getSingleMovie from '../../components/API/GetSingleMovie';
 
 import styles from './MovieDetailsPage.module.css';
 
 const MovieDetailsPage = () => {
-  const [movie, setMovie] = useState([{}]);
+  const [movie, setMovie] = useState({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [year, setYear] = useState('');
@@ -20,7 +14,7 @@ const MovieDetailsPage = () => {
   const { id } = useParams();
   const location = useLocation();
   const ref = useRef(location.state?.from ?? '/');
-  // const navigate = useNavigate();
+
   const defaultImg = `https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg`;
 
   useEffect(() => {
@@ -67,15 +61,8 @@ const MovieDetailsPage = () => {
   return (
     <div className={styles.detailsPage}>
       <Link className={styles.backButton} to={ref.current}>
-        {/* onClick={() => navigate(pageRef.current)} */}
-        {/* type="button" */}
-
-        {`<~ Go Back (To Future) :-)`}
+        Go Back (To Future)
       </Link>
-      {/* // </button> */}
-      {/* // <Link className='btn-back' to={ref.current}>
-			// 	Go back
-			// </Link> */}
       {loading && <p>...Loading</p>}
       {error && <h3>{error}</h3>}
       <div className={styles.block}>

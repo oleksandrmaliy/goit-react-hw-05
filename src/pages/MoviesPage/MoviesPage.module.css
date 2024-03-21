@@ -5,13 +5,19 @@
   background-color: #90cea1;
 }
 
+.info {
+  margin-left: 30px;
+}
+
 .movieList {
   list-style-type: none;
 }
+
 .movieLink {
   text-decoration: none;
   color: #0d253f;
 }
+
 .movieLink:global(:hover) {
   font-weight: bold;
 }

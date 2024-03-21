@@ -1,3 +1,7 @@
+.moviesList {
+  list-style-type: none;
+}
+
 .li {
   margin-bottom: 4px;
 }
@@ -5,9 +9,7 @@
 .linkage {
   padding: 0 10px;
   background-color: RGB(255, 255, 255, 0.5);
-
   text-decoration: none;
-
   color: #0d253f;
 }
 

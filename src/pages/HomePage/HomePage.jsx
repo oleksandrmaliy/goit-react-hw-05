@@ -5,7 +5,7 @@ import styles from './HomePage.module.css';
 import getAllMovies from '../../components/API/GetTrendingMovies';
 import MovieList from '../../components/MovieList/MovieList';
 
-const nr = Math.round(Math.random() * 20);
+const number = Math.round(Math.random() * 20);
 
 const HomePage = () => {
   const [allMovies, setAllMovies] = useState([]);
@@ -22,7 +22,7 @@ const HomePage = () => {
         const movies = response.data.results;
         setAllMovies(movies?.length ? [...movies] : []);
         setImage(
-          `url(https://image.tmdb.org/t/p/w500${movies[nr].backdrop_path})`
+          `url(https://image.tmdb.org/t/p/w500${movies[number].backdrop_path})`
         );
       } catch (error) {
         setError(error.message);
@@ -48,9 +48,7 @@ const HomePage = () => {
       {loading && <p>...Loading</p>}
       {error && <h3>{error}</h3>}
       {Boolean(!loading && !error) && (
-        <ul className={styles.list}>
-          <MovieList moviesArray={allMovies} location={location} />
-        </ul>
+        <MovieList moviesArray={allMovies} location={location} />
       )}
     </div>
   );

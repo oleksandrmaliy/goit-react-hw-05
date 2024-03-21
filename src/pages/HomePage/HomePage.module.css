@@ -4,25 +4,3 @@
   margin: 0px;
   padding: 10px 0px;
 }
-
-.list {
-  display: inline-block;
-  list-style: none;
-}
-
-.li {
-  margin-bottom: 6px;
-}
-
-.linkage {
-  padding: 0 10px;
-  background-color: RGB(255, 255, 255, 0.5);
-
-  text-decoration: none;
-
-  color: #0d253f;
-}
-
-.linkage:global(:hover) {
-  font-weight: bold;
-}

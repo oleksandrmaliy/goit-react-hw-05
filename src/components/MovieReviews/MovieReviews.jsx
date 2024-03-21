@@ -4,7 +4,7 @@ import styles from './MovieReviews.module.css';
 
 import getMovieReviews from '../API/GetMovieReviews';
 
-const MovieReviewsInfo = () => {
+const MovieReviews = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -12,7 +12,7 @@ const MovieReviewsInfo = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const movieReviews = async () => {
+    const fetchMovieReviews = async () => {
       try {
         setLoading(true);
         const response = await getMovieReviews(id);
@@ -24,7 +24,7 @@ const MovieReviewsInfo = () => {
       }
     };
     if (id) {
-      movieReviews();
+      fetchMovieReviews();
     }
   }, [id]);
 
@@ -49,4 +49,4 @@ const MovieReviewsInfo = () => {
   );
 };
 
-export default MovieReviewsInfo;
+export default MovieReviews;

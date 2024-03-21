@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styles from './MovieList.module.css';
 
 const MovieList = ({ moviesArray, location }) => {
-  return moviesArray.map(({ id, title, name }) => (
+  const moviesArrayItems = moviesArray.map(({ id, title, name }) => (
     <li className={styles.li} key={id}>
       <Link
         className={styles.linkage}
@@ -13,6 +13,7 @@ const MovieList = ({ moviesArray, location }) => {
       </Link>
     </li>
   ));
+  return <ul className={styles.moviesList}>{moviesArrayItems}</ul>;
 };
 
 export default MovieList;

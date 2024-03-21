@@ -11,6 +11,7 @@ const MoviesPage = () => {
   const [moviesList, setMoviesList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [counter, setCounter] = useState(false);
 
   const [searchParams] = useSearchParams();
   const movie = searchParams.get('query');
@@ -18,9 +19,10 @@ const MoviesPage = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const moviesList = async () => {
+    const fetchMovies = async () => {
       try {
         setLoading(true);
+        setCounter(true);
         const response = await getMoviesList(movie);
         const movies = response.data.results;
         setMoviesList(movies?.length ? [...movies] : []);
@@ -31,23 +33,20 @@ const MoviesPage = () => {
       }
     };
     if (movie) {
-      moviesList();
+      fetchMovies();
     }
   }, [movie]);
 
   return (
     <div className={styles.movies}>
       <SearchForm />
-      {loading && <p>...Loading</p>}
+      {loading && <p className={styles.info}> ...Loading</p>}
       {error && <h3>{error}</h3>}
-      {!loading && !error && (
-        <ul className={styles.movieList}>
-          {moviesList.length ? (
-            <MovieList moviesArray={moviesList} location={location} />
-          ) : (
-            <p>No movie with such title</p>
-          )}
-        </ul>
+      {Boolean(moviesList.length) && (
+        <MovieList moviesArray={moviesList} location={location} />
+      )}
+      {Boolean(!moviesList.length & !loading & !error & counter) && (
+        <p className={styles.info}>No movie with such title</p>
       )}
     </div>
   );
