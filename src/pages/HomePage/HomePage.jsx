@@ -7,7 +7,6 @@ import MovieList from '../../components/MovieList/MovieList';
 
 const HomePage = () => {
   const [allMovies, setAllMovies] = useState([]);
-  const [image, setImage] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const location = useLocation();
@@ -19,9 +18,6 @@ const HomePage = () => {
         const response = await getAllMovies();
         const movies = response.data.results;
         setAllMovies(movies?.length ? [...movies] : []);
-        setImage(
-          `url(https://image.tmdb.org/t/p/w500${movies[0].backdrop_path})`
-        );
       } catch (error) {
         setError(error.message);
       } finally {
@@ -32,17 +28,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div
-      style={
-        image
-          ? {
-              backgroundImage: image,
-              backgroundSize: 'cover',
-            }
-          : { backgroundColor: 'lightred' }
-      }
-      className={styles.home}
-    >
+    <div className={styles.home}>
       {loading && <p>...Loading</p>}
       {error && <h3>{error}</h3>}
       {Boolean(!loading && !error) && (
